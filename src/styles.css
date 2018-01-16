@@ -1,0 +1,86 @@
+body {
+  margin: 0; /* This reverts the default browser styling to set all margin and padding to 0 */
+  padding: 0;
+  font-family: Verdana, Georgia, sans-serif; /* This changes the the font-family for the entire document */
+  font-size: small; /* Because Verdana is larger naturally, I want to set the size to small globally */
+}
+
+#header {
+  position: relative;
+  width: 100%; /* Sets header to 100% width. If I had padding/margins set to browser default it wouldn't hit the edges of the screen */
+  display: inline-flex; /* This has objects in it sitting on the same line */
+  background-color: #ccb9ae;
+  border-bottom: 2px dashed black;
+  border-top: 2px dashed black;
+  align-items: center; /* This centers the content vertically within the header class */
+}
+
+#header h1 {
+  font-size: 3em; /* em takes the number passed to it and multiples it by the default font-size */
+  margin: 1% 0 1% 2%;
+  color: #8c705e;
+  text-shadow: 3px 2px 1px #413e36; /* This is our drop shadow effect */
+}
+
+#header-nav ul {
+  list-style-type: none; /* Removes the bullet points from my UL */
+}
+
+#header-nav li {
+  display: inline-block; /* Changes to side by side items rather than vertical */
+  font-size: 1.5em;
+}
+
+#header-nav a {
+  text-transform: uppercase; /* Changes anything within the <a> </a> tag apperance */
+  text-decoration: none; /* Removes the default anchor tag styling (underline) */
+  padding: 10px;
+  color: #8c705e;
+}
+
+#header-nav a:hover { /* This a peudo-class for when a mouse hovers over the link */
+  padding: 10px;
+  background-color: #8c705e; /* This with a padding essentially has a box around my link */
+  color: #ccb9ae;
+  border-radius: 5%; /* Adds rounding to the corners of my border */
+  text-shadow: 2px 2px 1px #413e36;
+  box-shadow: 2px 2px 1px #413e36; /* Gives my box a shadow to help it stand out a bit */
+}
+
+#header-contact {
+  right: 25px; /* Because the header elements are inline-flex this will overlap other items if I don't set it right. This goes far right -25px */
+  color: #8c705e;
+  position: absolute; /* Will always stay absolutely fixed where it is in the ancestor element */
+}
+
+#header-contact ul {
+  list-style-type: none;
+  text-align: right;
+}
+
+#header-contact a {
+  color: #8c705e;
+  text-decoration: none;
+}
+
+#header-contact a:hover {
+  text-decoration: underline;
+  color: #413e36;
+}
+
+@media (max-width: 1389px) { /* Styling applied for viewports with this defined max-width */
+  #header-contact {
+    display: none; /* Hides the #header-contact section */
+  }
+}
+
+@media (max-width: 1216px) {
+  #header-nav a { padding: 1px; }
+  #header-nav a:hover {
+    padding: 1px;
+    background-color: #8c705e;
+    color: #ccb9ae;
+    text-shadow: 2px 2px 1px #413e36;
+    box-shadow: 2px 2px 1px #413e36;
+  }
+}
